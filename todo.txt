@@ -1,0 +1,3 @@
+- hover state on button
+- vertical line on pseudo elements, list section
+- fix responsiveness on headerNav ('login' currently disappearing)

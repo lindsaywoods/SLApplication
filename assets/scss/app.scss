@@ -19,5 +19,306 @@
 @import 'components/lists';
 @import 'components/tabs';
 
-// Templates
-@import 'templates/example';
+body {
+  color: $white;
+}
+
+h1 {
+  font-weight: bold;
+  @include fontSize(45);
+  line-height: 1.3;
+  // margin-left: 3%;
+  width: 65%;
+}
+
+h1, h2, h3, h4, p, a, button {
+  font-family: 'Poppins', sans-serif;
+}
+
+//TO-DO - figure out font sizing.  P text in examples is currently 16px but the ratio seems ~~
+
+h2 {
+  @include fontSize(18)
+}
+
+button {
+  background: $magenta;
+  color: $white;
+  border-radius: 20px;
+  border: 2px solid $magenta;
+}
+
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  background: linear-gradient(0deg, rgba(51, 9, 139, 1) 15%, rgba( 51, 9, 139, .8) 45%, rgba(51, 9, 139, .6)), url("/assets/images/bg-img-cropped.png");
+  nav {
+    padding-top: 1%;
+  }
+  ul, .headerMain  {
+    display: flex;
+    justify-content: space-between;
+  }
+  .headerNavRight, .subscribe {
+    display: flex;
+    flex-direction: row;
+  }
+  .logo {
+    flex-shrink: 1;
+  }
+  .headerNavRight {
+    padding: 3%;
+    li {
+      padding: 0 5% 0;
+    }
+  }
+  input {
+    background: transparent;
+    border: transparent;
+    color: $white;
+    font-family: 'Poppins', sans-serif;
+    margin: 3%;
+    line-height: 1.8;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+  }
+  .border {
+    border: 2px solid #69668c;
+    border-radius: 10px;
+  }
+  .border:first-child {
+    margin-bottom: 8%;
+  }
+
+  .inputs, button, .subscribe {
+    width: 88%;
+  }
+  .subscribe {
+    @include fontSize(7);
+    color: #69668c;
+    margin: 5% 0;
+  }
+  a {
+    transition: all 1.25s ease;
+    text-decoration: none;
+    color: $white;
+    &:hover {
+      color: $magenta;
+    }
+  }
+  button {
+    border-radius: 36px;
+    padding: 5% 2%;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 975px) {
+  header h1 {
+    @include fontSize(40);
+  }
+}
+
+@media (max-width: 800px) {
+  header h1 {
+    @include fontSize(30);
+  }
+}
+
+@media (max-width: 580px) {
+  header h1 {
+    @include fontSize(20);
+  }
+}
+
+section {
+  background: $mainPurple;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  li {
+    line-height: 150%;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+  li {
+    margin: 5% 1%;
+  }
+  li:first-of-type {
+    margin: 0 1% 0 1%;
+  }
+  li:last-of-type {
+    margin: 1% 1% 0 1%;
+  }
+  .pseudoContainer {
+    padding: 1.5% 2% 1.5% 10%;
+    background: $lightContrastPurple;
+    border-radius: 5px;
+    width: 70%;
+    h2 {
+      line-height: 130%;
+      padding-bottom: 1%;
+    }
+  } 
+  .watch:after {
+    content: "1";
+  }
+  .watch:before, .upvote:before, .share:before {
+    content: '\2022';
+    color: $lightContrastPurple;
+    @include fontSize(45);
+    top: 35%;
+    position: absolute;
+    left: 8%;
+  }
+  .upvote:after {
+    content: "2";
+  }
+  .share:after {
+    content: "3"
+  }
+  .watch:after, .upvote:after, .share:after {
+    color: $lightContrastPurple;
+    position: absolute;
+    left: 1%;
+    top: 40%;
+    @include fontSize(40);
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+  }
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p {
+    background: $lightContrastPurple;
+    text-align: center;
+    width: 100%;
+    padding: 3% 0;
+  }
+  .imageContainer {
+    background: $darkContrastPurple;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  img {
+    width: 80%;
+    max-width: 800px;
+
+  }
+}
+
+.inThePress {
+  h2:first-child {
+    text-align: center;
+    padding: 7% 0 2% 0;
+    @include fontSize(15)
+  }
+  h2:not(:first-child) {
+    padding: 7%;
+  }
+  p {
+    line-height: 150%;
+    padding: 0 7% 5% 7%;
+    overflow: hidden;
+  }
+  .logo {
+    background: $white;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 65px;
+  }
+  .examplesContainer {
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  img {
+    width: 210px;
+    align-self: center;
+  }
+  .pressExample {
+    background: $lightContrastPurple;
+    border-radius: 10px;
+  }
+  a {
+    color: $white;
+    text-decoration: underline;
+    padding-left: 7%;
+    &:hover {
+      color: $magenta;
+    }
+  }
+  .readMore {
+    padding-bottom: 7%;
+  }
+}
+
+// leave this outside the nest for specificity
+.pressExample {
+  width: 30%;
+}
+
+@media (max-width: 800px) {
+  .examplesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pressExample {
+    width: 80%;
+    margin: 3% 0;
+  }
+}
+
+
+footer {
+  .users {
+    background: $mainPurple;
+    display: flex;
+    justify-content: space-between;
+    color: #2b067a;
+    @include fontSize(24);
+    font-weight: bold;
+    padding: 10% 0 0.2% 0;
+    h3 {
+      max-width: 1200px;
+    }
+  }
+  .button {
+    background: $lightContrastPurple;
+    text-align: center;
+    padding: 1.5% 0;
+    button {
+      min-width: 130px;
+      padding: .7% 4%;
+    }
+  }
+  ul {
+    display: flex;
+    justify-content: flex-end;
+    li {
+      padding: 10% 3% 3% 3%;
+    }
+    a {
+      color: $white;
+    }
+  }
+  .footerNav {
+    background: $mainPurple;
+  }
+}
+

@@ -1,1 +1,7 @@
 $system-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+@mixin fontSize($sizeValue){
+  font-size: $sizeValue * 1px;
+  font-size: ($sizeValue/10) * 1rem;
+}
+

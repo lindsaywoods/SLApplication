@@ -11,7 +11,7 @@
 @import 'core/colors';
 @import 'core/fonts';
 @import 'core/global';
-@import 'core/page-layout';
+@import 'core/animations';
 @import 'core/typography';
 
 // Components
@@ -119,6 +119,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+  }
+  .pulsate-fwd {
+	  -webkit-animation: pulsate-fwd 8s ease-in-out infinite both;
+    animation: pulsate-fwd 8s ease-in-out infinite both;
   }
 }
 
